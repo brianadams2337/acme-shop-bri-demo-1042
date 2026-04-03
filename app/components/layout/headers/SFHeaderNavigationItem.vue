@@ -1,28 +1,25 @@
 <template>
   <li
     ref="root"
-    class="flex h-full items-center pl-4 first:pl-0"
+    class="flex h-full items-center"
     @mouseenter="openFlyout(false)"
     @mouseleave="closeFlyout()"
   >
     <div class="relative flex items-center">
       <SFNavigationTreeItem
         :navigation-item="item"
-        class="!mr-0 flex !h-6 items-center py-1"
-        :class="{
-          'text-primary': !item.customData?.linkColor,
-        }"
+        class="!mr-0 flex !h-6 items-center py-1 text-white hover:text-white/80"
         data-testid="nav-link-main"
         :is-active="isActive"
       >
-        <span class="text-md font-semibold leading-10">
+        <span class="text-sm font-normal uppercase tracking-wide">
           {{ item.name }}
         </span>
       </SFNavigationTreeItem>
       <SFButton
         v-if="item.children.length"
         ref="button"
-        class="pointer-events-none absolute -right-4 z-10 opacity-0 focus-within:opacity-100"
+        class="pointer-events-none absolute -right-4 z-10 text-white opacity-0 focus-within:opacity-100"
         :aria-expanded="isOpen"
         :aria-label="item.name"
         :aria-controls="`${item.id}`"
@@ -37,7 +34,7 @@
       :id="item.id"
       ref="flyout"
       :item="item"
-      class="absolute inset-x-0 top-[63px] z-20 !m-0"
+      class="absolute inset-x-0 top-[104px] z-20 !m-0"
       @close="closeFlyout"
     />
   </li>

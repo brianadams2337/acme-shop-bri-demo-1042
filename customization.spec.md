@@ -1,0 +1,629 @@
+# Shop Customization Specification
+
+> Fill out this spec to customize your SCAYLE storefront.
+> Reference screenshot: `screenshots/screenshot_homepagegilt.png`
+> Items marked with `[CURRENT]` show the existing configuration.
+> Items marked with `[REQUIRED]` need your input.
+> Items marked with `[OPTIONAL]` can be customized or left as-is.
+
+---
+
+## 0. Visual Design (Based on Reference Screenshot)
+
+> Use this section to describe the visual design you want to match.
+> Reference: `screenshots/screenshot_homepagegilt.png`
+
+### Header Layout
+
+| Element | Gilt Reference | Your Value | Notes |
+|---------|----------------|------------|-------|
+| Background Color | `#000000` (black) | | |
+| Height | ~60px | | |
+| Logo Position | left | | left / center |
+| Logo Color | `#D4AF37` (gold) | | or "use brand colors" |
+
+#### Search Bar
+| Setting | Gilt Reference | Your Value |
+|---------|----------------|------------|
+| Show Search | Yes (inline) | Yes / No |
+| Style | rounded, gray bg | | inline / icon-only / expandable |
+| Placeholder Text | "Search designers, products and more..." | |
+| Position | center-left, after logo | |
+
+#### Utility Icons (right side of header)
+| Icon | Gilt Has It | Enable | Label Text | Icon File |
+|------|-------------|--------|------------|-----------|
+| Country Selector | Yes ("United States of America") | [ ] Yes / [ ] No | | |
+| Wishlist | Yes (heart + "Wish List") | [ ] Yes / [ ] No | | |
+| Account | Yes (user + "Account") | [ ] Yes / [ ] No | | |
+| Cart | Yes (bag + "Cart") | [ ] Yes / [ ] No | | |
+
+#### CTA Button (header)
+| Setting | Gilt Reference | Your Value |
+|---------|----------------|------------|
+| Show CTA Button | Yes | Yes / No |
+| Button Text | "Checkout" | |
+| Background Color | `#D4AF37` (gold) | |
+| Text Color | `#000000` (black) | |
+
+---
+
+### Navigation Bar
+
+| Setting | Gilt Reference | Your Value |
+|---------|----------------|------------|
+| Background Color | `#5a5a5a` (gray) | |
+| Text Color | `#FFFFFF` (white) | |
+| Text Transform | UPPERCASE | | uppercase / none |
+| Font Weight | normal | | normal / bold |
+
+#### Nav Items (in order)
+| # | Gilt Menu Item | Your Menu Item | Link |
+|---|----------------|----------------|------|
+| 1 | FEATURED | | /category/featured |
+| 2 | DESIGNERS | | |
+| 3 | CLEARANCE | | |
+| 4 | WOMEN | | |
+| 5 | MEN | | |
+| 6 | KIDS | | |
+| 7 | HOME | | |
+| 8 | PRE-LOVED | | |
+| 9 | CITY | | |
+
+#### Sub-Nav Promo Banner
+| Setting | Gilt Reference | Your Value |
+|---------|----------------|------------|
+| Show Banner | Yes | Yes / No |
+| Text | "Place an order, then ship free for 30 days" | |
+| Link URL | | |
+
+---
+
+### Hero Section
+
+| Setting | Gilt Reference | Your Value |
+|---------|----------------|------------|
+| Layout Style | full-width with content left | | full-width / contained |
+| Height | ~50vh | | e.g., 500px or 50vh |
+| Content Position | left overlay | | left / center / right |
+
+#### Hero Content
+| Element | Gilt Reference | Your Value |
+|---------|----------------|------------|
+| Headline | "BRAND-NEW LUXE" | |
+| Subheadline | "FEATURING BOTTEGA VENETA" | |
+| Text Color | `#000000` (black) | |
+| Headline Font Size | ~36px | |
+
+#### Hero CTA Button
+| Setting | Gilt Reference | Your Value |
+|---------|----------------|------------|
+| Button Text | "GET IT FOR LESS" | |
+| Background Color | `#D4AF37` (gold) | |
+| Text Color | `#000000` (black) | |
+| Style | rectangle, bold text | |
+
+#### Hero Background
+| Setting | Your Value |
+|---------|------------|
+| Image File | `screenshots/assets/hero.jpg` |
+| Overlay | none / color with opacity |
+
+---
+
+### Promo Tiles Grid (below hero)
+
+| Setting | Gilt Reference | Your Value |
+|---------|----------------|------------|
+| Columns (Desktop) | 3 | |
+| Columns (Mobile) | 1 | |
+| Gap | ~8px | |
+
+#### Tile 1
+| Field | Gilt Reference | Your Value |
+|-------|----------------|------------|
+| Image | gradient/abstract | `screenshots/assets/promo-1.jpg` |
+| Headline | "EVERY. SINGLE. THING." | |
+| Subtext | "$31" | |
+| Link URL | | |
+
+#### Tile 2
+| Field | Gilt Reference | Your Value |
+|-------|----------------|------------|
+| Image | lifestyle photo | `screenshots/assets/promo-2.jpg` |
+| Headline | "72% OFF" | |
+| Subtext | "2 DAYS OF STEALS" | |
+| Link URL | | |
+
+#### Tile 3
+| Field | Gilt Reference | Your Value |
+|-------|----------------|------------|
+| Image | product photo | `screenshots/assets/promo-3.jpg` |
+| Headline | "PRADA" | |
+| Subtext | "30% OFF STYLES" | |
+| Link URL | | |
+
+---
+
+### Assets Checklist
+
+Place files in `screenshots/assets/` folder:
+
+- [ ] `logo.svg` - Your primary logo (SVG preferred)
+- [ ] `logo-light.svg` - Logo for dark backgrounds (if different)
+- [ ] `favicon.svg` or `favicon.ico` - Browser favicon
+- [ ] `hero.jpg` - Hero section background image
+- [ ] `promo-1.jpg` - First promo tile image
+- [ ] `promo-2.jpg` - Second promo tile image
+- [ ] `promo-3.jpg` - Third promo tile image
+- [ ] Custom icons (wishlist, cart, account) if not using defaults
+
+---
+
+### Quick Color Reference (from Gilt screenshot)
+
+| Element | Hex Code | Notes |
+|---------|----------|-------|
+| Header BG | `#000000` | black |
+| Logo/Accent | `#D4AF37` | gold |
+| Nav BG | `#5a5a5a` | medium gray |
+| Nav Text | `#FFFFFF` | white |
+| CTA Buttons | `#D4AF37` bg, `#000000` text | gold with black text |
+| Page BG | `#FFFFFF` | white |
+
+---
+
+## 1. Brand Identity
+
+### Logo Assets
+| Asset | Current Value | Your Value |
+|-------|---------------|------------|
+| Primary Logo (header) | `public/logo.svg` | [REQUIRED] Provide SVG |
+| Signet/Icon (favicon) | `app/assets/icons/logo/signet.svg` (shows "GILT" text) | [REQUIRED] Provide SVG |
+| Favicon | `public/favicon.ico` | [REQUIRED] Provide .ico or .png |
+
+### Color Palette
+
+#### Core Colors
+| Color | Current Hex | Your Hex | Usage |
+|-------|-------------|----------|-------|
+| Primary | `#171717` | | Main brand color, buttons, text |
+| Secondary | `#666666` | | Supporting color, muted text |
+| Accent | `#5328e1` | | Highlights, CTAs, focus states |
+| White | `#ffffff` | | Backgrounds |
+| Gray 100 | `#fafafa` | | Light backgrounds |
+| Gray 200 | `#f2f2f2` | | Borders, dividers |
+| Gray 300 | `#ebebeb` | | Hover states |
+| Gray 400 | `#d9d9d9` | | Disabled states |
+| Gray 500 | `#a8a8a8` | | Placeholder text |
+
+#### Status Colors
+| Color | Current Hex | Your Hex | Usage |
+|-------|-------------|----------|-------|
+| Success | `#0dcc8d` | | Success messages, confirmations |
+| Success Light | `#cef5e8` | | Success backgrounds |
+| Error/Alert | `#d42411` | | Error states, required fields |
+| Alert Light | `#fadbd8` | | Error backgrounds |
+| Warning | `#f59e0b` | | Warning messages |
+| Warning Light | `#fdecce` | | Warning backgrounds |
+| Info | `#ccbff6` | | Informational messages |
+
+#### Promotion Colors
+| Color | Current Hex | Your Hex | Usage |
+|-------|-------------|----------|-------|
+| Sale/Promotion | `#AEECEF` | | Promotion banners, badges |
+| Campaign | `#FFC65F` | | Campaign highlights |
+| Product Sale | `#d93321` | | Sale price text |
+
+### Typography
+| Element | Current Value | Your Value |
+|---------|---------------|------------|
+| Font Family | `Inter` (Google Font) | |
+| Weight Normal | `400` | |
+| Weight Semibold | `600` | |
+| Weight Bold | `700` | |
+
+> [OPTIONAL] To use a custom font, provide .woff2 files or a Google Fonts name
+
+---
+
+## 2. Shop Configuration
+
+### Shops/Locales
+
+**[CURRENT CONFIGURATION]:**
+| Shop ID | Locale Code | Currency | Country | URL Prefix | Is Default |
+|---------|-------------|----------|---------|------------|------------|
+| 1043 | en-US | USD | US | /us | Yes |
+
+**[YOUR CONFIGURATION]:** (add rows as needed)
+| Shop ID | Locale Code | Currency | Country | URL Prefix | Is Default |
+|---------|-------------|----------|---------|------------|------------|
+| | | | | | |
+| | | | | | |
+| | | | | | |
+
+### Payment Providers
+**[CURRENT]:** lastschrift, visa, mastercard, discover, diners, ratepay, klarna, paypal
+
+**[YOUR CONFIGURATION]:**
+| Shop/Locale | Payment Providers |
+|-------------|-------------------|
+| | |
+
+---
+
+## 3. Content Management
+
+### CMS Provider
+**[CURRENT]:** `scayle` (default)
+
+- [ ] **Storyblok** - Visual editor, component-based
+- [ ] **Contentful** - Flexible content modeling
+- [ ] **Contentstack** - API-first approach
+- [x] **Scayle** - Default (no external CMS)
+
+### CMS Credentials (if using Storyblok/Contentful/Contentstack)
+| Setting | Value |
+|---------|-------|
+| Space ID / Environment | |
+| Access Token (public) | |
+| Preview Token | |
+| Management Token | |
+
+### Homepage Content
+
+#### Hero Section
+| Field | Value |
+|-------|-------|
+| Headline | |
+| Subheadline | |
+| CTA Button Text | |
+| CTA Button Link | |
+| Background Image URL | |
+
+#### Featured Sections
+> Describe sections to appear on homepage
+
+1. **Section Name**:
+   - Type: [Product Slider | Category Grid | Banner | Text Block]
+   - Content:
+
+2. **Section Name**:
+   - Type:
+   - Content:
+
+### Header Top Bar
+| Field | Value |
+|-------|-------|
+| Message Text | e.g., "Free shipping on orders over $50" |
+| Link (optional) | |
+| Background Color | |
+| Text Color | |
+
+### Footer Content
+
+#### Link Sections
+| Section Title | Links (label: URL) |
+|---------------|-------------------|
+| Customer Service | |
+| About Us | |
+| Legal | |
+
+#### Social Media Links
+| Platform | URL |
+|----------|-----|
+| Instagram | |
+| Facebook | |
+| Twitter/X | |
+| TikTok | |
+| YouTube | |
+
+#### Legal/Compliance
+| Item | URL or Text |
+|------|-------------|
+| Privacy Policy | |
+| Terms & Conditions | |
+| Imprint | |
+| Cookie Policy | |
+
+---
+
+## 4. Product Display
+
+### Grid Layout
+**[CURRENT CONFIGURATION]:**
+| Viewport | Products Per Row |
+|----------|------------------|
+| Mobile (<640px) | 2 |
+| Tablet (640-1023px) | 3 |
+| Desktop (1024px+) | 4 |
+
+**[YOUR CONFIGURATION]:** (leave blank to keep current)
+| Viewport | Products Per Row |
+|----------|------------------|
+| Mobile | |
+| Tablet | |
+| Desktop | |
+
+### Pagination
+**[CURRENT CONFIGURATION]:**
+| Setting | Current Value | Your Value |
+|---------|---------------|------------|
+| Products Per Page | 24 | |
+| Image Eager Load Count | 8 | |
+| Skeleton Loader Count | 20 | |
+| Siblings Limit (variants shown) | 4 | |
+
+### Product Images
+**[CURRENT CONFIGURATION]:**
+| Setting | Current Value | Your Value |
+|---------|---------------|------------|
+| Aspect Ratio | 3:4 (portrait) | |
+| Image Quality (1-100) | 75 | |
+
+### Color Swatches
+**[CURRENT MAPPING]:** (German color names - update for your market)
+| Color Name | Current Hex | Your Color Name | Your Hex |
+|------------|-------------|-----------------|----------|
+| weiss_1 | #ffffff | white | |
+| beige | #e3dad1 | beige | |
+| schwarz | #000000 | black | |
+| grau | #6b7280 | gray | |
+| rot | #ef4444 | red | |
+| blau | #3b82f6 | blue | |
+| gruen | #22c55e | green | |
+| gelb | #eab308 | yellow | |
+| orange | #f97316 | orange | |
+| braun | #bfa094 | brown | |
+| pink | #ec4899 | pink | |
+| lila | #a855f7 | purple | |
+| mischfarben | multi | multicolor | |
+
+### Product Badges
+| Badge Type | Label | Background Color | Text Color |
+|------------|-------|------------------|------------|
+| Sale | | | |
+| New | | | |
+| Limited | | | |
+| Exclusive | | | |
+
+### Product Card Features
+- [ ] Show color/variant swatches
+- [ ] Show wishlist button
+- [ ] Show quick-add to cart
+- [ ] Show ratings/reviews
+- [ ] Show "In Stock" status
+
+---
+
+## 5. Features
+
+### Core Features
+- [x] Product Catalog (enabled)
+- [x] Shopping Cart (enabled)
+- [x] Checkout (enabled)
+- [ ] Wishlist
+- [ ] Product Reviews
+- [ ] Recently Viewed
+- [ ] Product Comparison
+
+### Promotions
+- [ ] Sale/Discount Badges
+- [ ] Buy X Get Y Deals
+- [ ] Combo Deals
+- [ ] Gift Selection
+- [ ] Promotion Banners
+- [ ] Countdown Timers
+
+### Search & Navigation
+- [ ] Autocomplete Search
+- [ ] Search Suggestions
+- [ ] Recent Searches
+- [ ] Mega Menu Navigation
+- [ ] Breadcrumb Trail
+
+### Account Features
+- [ ] Guest Checkout
+- [ ] User Registration
+- [ ] Order History
+- [ ] Address Book
+- [ ] Saved Payment Methods
+- [ ] Newsletter Subscription
+
+### Subscriptions
+**[CURRENT]:** Module available but not configured
+- [ ] Enable Subscription Module
+- [ ] Subscription Products
+- [ ] Recurring Orders
+
+---
+
+## 6. Authentication
+
+### Auth Providers
+**[CURRENT]:** OAuth configured, Identity Providers not enabled
+
+- [ ] Email/Password (default)
+- [ ] Google OAuth
+- [ ] Facebook OAuth
+- [ ] Apple Sign-In
+- [ ] Other: ___________
+
+### OAuth Credentials (if enabling social login)
+| Provider | Client ID | Redirect URI |
+|----------|-----------|--------------|
+| Google | | |
+| Facebook | | |
+| Apple | | |
+
+---
+
+## 7. Analytics & Tracking
+
+### Google Tag Manager
+**[CURRENT]:** Placeholder `GTM-123`
+
+| Setting | Current Value | Your Value |
+|---------|---------------|------------|
+| GTM Container ID | GTM-123 | [REQUIRED] |
+| Enable Debug Mode | true | |
+
+### Consent Management
+**[CURRENT]:** Usercentrics placeholder
+
+| Setting | Current Value | Your Value |
+|---------|---------------|------------|
+| Provider | Usercentrics | |
+| App ID | (empty) | |
+
+### Custom Events to Track
+> List any additional events beyond standard ecommerce
+
+| Event Name | Trigger |
+|------------|---------|
+| | |
+
+---
+
+## 8. Environment Configuration
+
+### API & Services
+**[REQUIRED] - Get these from your SCAYLE Cloud Panel**
+
+| Service | Placeholder | Your Value |
+|---------|-------------|------------|
+| SCAYLE Storefront API Host | `https://{{tenant-space}}.storefront.api.scayle.cloud/v1/` | [REQUIRED] |
+| CDN URL (images) | `https://{{tenant-space}}.cdn.scayle.cloud/` | [REQUIRED] |
+| Google Maps API Key | (empty) | [OPTIONAL] |
+
+### OAuth (Backend)
+**[REQUIRED] - Get these from your SCAYLE Cloud Panel**
+
+| Setting | Your Value |
+|---------|------------|
+| OAuth Host | |
+| OAuth Client ID | |
+| OAuth Client Secret | |
+
+### Checkout Configuration (per shop)
+**[REQUIRED] - Get these from your SCAYLE Cloud Panel**
+
+| Setting | Your Value |
+|---------|------------|
+| Checkout Host | |
+| Checkout User | |
+| Checkout Token | |
+| Checkout Secret | |
+
+### Monitoring (Optional)
+| Service | Value |
+|---------|-------|
+| Sentry DSN | |
+| OpenTelemetry Enabled | Yes (current) |
+| Log Level | debug (current) |
+
+---
+
+## 9. SEO & Metadata
+
+### Default Meta Tags
+**[CURRENT]:**
+| Tag | Current Value | Your Value |
+|-----|---------------|------------|
+| Site Title | SCAYLE Storefront | [REQUIRED] |
+| Title Template | | e.g., "%s | Your Brand" |
+| Meta Description | (empty) | [REQUIRED] |
+| OG Image (default) | | |
+
+### Robots
+| Setting | Value |
+|---------|-------|
+| Allow Indexing | Yes/No |
+| Sitemap URL | |
+
+---
+
+## 10. Additional Customizations
+
+### Breakpoints
+**[CURRENT CONFIGURATION]:**
+| Breakpoint | Current Value | Your Value |
+|------------|---------------|------------|
+| xs (mobile) | 320px | |
+| sm (large phone) | 640px | |
+| md (tablet) | 768px | |
+| lg (desktop) | 1024px | |
+| xl (large desktop) | 1280px | |
+
+### Custom Pages
+> List any additional static pages needed
+
+| Page | URL Path | Description |
+|------|----------|-------------|
+| About Us | /about | |
+| Contact | /contact | |
+| FAQ | /faq | |
+| Size Guide | /size-guide | |
+| Shipping Info | /shipping | |
+| Returns | /returns | |
+
+### Third-Party Integrations
+| Integration | Purpose | Credentials/Config Needed |
+|-------------|---------|---------------------------|
+| | | |
+
+---
+
+## Notes & Additional Requirements
+
+> Add any other requirements, constraints, or context here
+
+```
+[Your notes here]
+```
+
+---
+
+## Checklist Before Development
+
+### Required Items
+- [ ] Shop ID confirmed from SCAYLE backend
+- [ ] SCAYLE API credentials (Host, Token)
+- [ ] OAuth credentials (Host, Client ID, Secret)
+- [ ] Checkout credentials (per shop)
+- [ ] CDN URL confirmed
+- [ ] GTM Container ID
+
+### Brand Assets
+- [ ] Primary logo (SVG, ~40px height for header)
+- [ ] Favicon (ICO or PNG, square)
+- [ ] Color palette finalized (at minimum: primary, secondary, accent)
+
+### Content
+- [ ] Site title and meta description
+- [ ] Homepage content planned
+- [ ] Footer links prepared
+
+### Optional
+- [ ] Custom font files or Google Font selection
+- [ ] CMS provider selected and credentials ready
+- [ ] Translation files ready (if multi-language)
+- [ ] Social media links
+- [ ] Legal page URLs
+
+---
+
+## Quick Reference: File Locations
+
+| What | Where |
+|------|-------|
+| Shop config | `config/shops.ts` |
+| Colors/Theme | `tailwind.config.ts` |
+| UI constants | `config/ui.ts` |
+| Product constants | `shared/constants/product.ts` |
+| Environment vars | `.env` (copy from `.env.example`) |
+| Logo (header) | `public/logo.svg` |
+| Logo (signet) | `app/assets/icons/logo/signet.svg` |
+| Favicon | `public/favicon.ico` |
+| Translations | `i18n/locales/*.json` |

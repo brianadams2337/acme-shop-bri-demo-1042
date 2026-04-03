@@ -2,10 +2,10 @@
   <section
     ref="root"
     role="search"
-    class="relative transition-all duration-150 max-lg:flex"
+    class="relative w-full transition-all duration-150 max-lg:flex"
     :class="{
-      'max-lg:px-0 lg:max-w-[475px]': hasFocus,
-      'max-lg:px-3 lg:max-w-64': !hasFocus,
+      'max-lg:px-0': hasFocus,
+      'max-lg:px-3': !hasFocus,
     }"
   >
     <form
@@ -18,11 +18,11 @@
     >
       <div
         role="button"
-        class="group flex h-11 cursor-pointer items-center gap-2 overflow-hidden border border-gray-200 px-3 transition-all duration-150 max-lg:grow lg:h-10"
+        class="group flex h-11 cursor-pointer items-center gap-2 overflow-hidden border border-gray-400 px-3 transition-all duration-150 max-lg:grow lg:h-9"
         data-testid="search-form-button"
         :class="{
-          'bg-white lg:rounded-md': hasFocus,
-          'rounded-md bg-gray-200 pr-8 hover:bg-gray-300': !hasFocus,
+          'bg-white': hasFocus,
+          'bg-gray-100 hover:bg-gray-200': !hasFocus,
         }"
         :tabindex="hasFocus ? -1 : 0"
         :aria-label="$t('global.search')"
@@ -46,11 +46,11 @@
             aria-autocomplete="list"
             :placeholder="$t('search_input.placeholder')"
             :aria-label="$t('global.search')"
-            class="min-w-0 grow bg-gray-200 transition-colors placeholder:text-gray-500 placeholder-shown:truncate focus-visible:shadow-none focus-visible:outline-none"
+            class="min-w-0 grow bg-gray-100 text-primary transition-colors placeholder:text-gray-500 placeholder-shown:truncate focus-visible:shadow-none focus-visible:outline-none"
             data-testid="header-search-input"
             :class="{
-              'bg-white ': hasFocus,
-              'group-hover:bg-gray-300': !hasFocus,
+              'bg-white': hasFocus,
+              'group-hover:bg-gray-200': !hasFocus,
             }"
           />
         </div>

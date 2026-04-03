@@ -10,9 +10,9 @@
       <SFLocalizedLink
         :to="link"
         raw
-        class="flex size-11 items-center justify-center rounded-md p-2 hover:bg-gray-200"
+        class="flex h-full items-center justify-center hover:bg-white/10"
         data-testid="header-user-button"
-        :class="{ 'bg-gray-200': isOpen }"
+        :class="{ 'bg-white/10': isOpen }"
         :aria-label="$t('user_navigation_item.a11y.title')"
         @keydown.space.prevent="toggleOpen(true)"
         @mouseenter="
@@ -20,6 +20,12 @@
         "
       >
         <IconUserAccount class="size-5" />
+        <span
+          v-if="showLabel"
+          class="ml-1.5 hidden text-sm lg:inline"
+        >
+          {{ $t('navigation.account_label') || 'Account' }}
+        </span>
       </SFLocalizedLink>
     </template>
     <template #content>
@@ -47,7 +53,7 @@ import { IconUserAccount } from '#components'
 import { useGlobalEvents } from '#tracking/composables'
 import { useDefaultBreakpoints } from '#storefront-ui/composables'
 
-defineProps<{ blockPopup?: boolean }>()
+defineProps<{ blockPopup?: boolean; showLabel?: boolean }>()
 
 const route = useRoute()
 const { getLocalizedRoute } = useRouteHelpers()

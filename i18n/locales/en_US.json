@@ -113,6 +113,9 @@
   "navigation": {
     "find_a_store": "Find a Store",
     "wishlist": "Wishlist | Wishlist, {count} item | Wishlist, {count} items",
+    "wishlist_label": "Wish List",
+    "account_label": "Account",
+    "cart_label": "Cart",
     "a11ly": {
       "side_navigation": "Open side navigation"
     }
@@ -156,6 +159,7 @@
   },
   "basket_page": {
     "title": "Basket",
+    "checkout": "Checkout",
     "a11y": {
       "title": "Basket | Basket, {count} item | Basket, {count} items"
     },

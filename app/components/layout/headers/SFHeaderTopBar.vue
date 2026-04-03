@@ -1,5 +1,6 @@
 <template>
-  <div class="hidden h-9 w-full bg-accent font-semibold lg:flex">
+  <!-- Top bar hidden on desktop since elements moved to main header -->
+  <div class="hidden">
     <div class="flex w-full px-4 lg:px-7">
       <div class="ml-auto flex gap-5 text-sm">
         <SFLocalizedLink

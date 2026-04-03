@@ -8,9 +8,9 @@
       <SFLocalizedLink
         :to="routeList.basket"
         raw
-        class="flex h-11 items-center justify-center rounded-md p-2 hover:bg-gray-200"
+        class="flex h-full items-center justify-center hover:bg-white/10"
         data-testid="basket-link"
-        :class="{ 'bg-gray-200': isOpen }"
+        :class="{ 'bg-white/10': isOpen }"
         :aria-label="ariaLabel"
         @mouseenter="
           trackContentView({
@@ -20,6 +20,13 @@
       >
         <IconCommerceBasket class="size-5 shrink-0" />
         <span
+          v-if="showLabel"
+          class="ml-1.5 hidden text-sm lg:inline"
+        >
+          {{ $t('navigation.cart_label') || 'Cart' }}
+        </span>
+        <span
+          v-else
           class="ml-1 min-w-[1ch] text-sm font-semibold leading-none"
           data-testid="header-basket-count"
         >
@@ -64,7 +71,7 @@ const ariaLabel = computed(() =>
 )
 const { data: campaign } = useCampaign()
 
-defineProps<{ blockPopup?: boolean }>()
+defineProps<{ blockPopup?: boolean; showLabel?: boolean }>()
 
 const { trackContentView } = useGlobalEvents()
 

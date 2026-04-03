@@ -1,0 +1,380 @@
+# Shop Customization Specification
+
+> Fill out this spec to customize your SCAYLE storefront.
+> Replace placeholder values with your actual configuration.
+
+---
+
+## 1. Brand Identity
+
+### Logo Assets
+| Asset | File Path or URL | Notes |
+|-------|------------------|-------|
+| Primary Logo (header) | | SVG preferred, max height ~40px |
+| Signet/Icon (favicon) | | Square SVG, used for favicon |
+| Footer Logo | | Optional, if different from header |
+
+### Color Palette
+
+#### Core Colors
+| Color | Hex Code | Usage |
+|-------|----------|-------|
+| Primary | `#` | Main brand color, buttons, links |
+| Secondary | `#` | Supporting color, secondary actions |
+| Accent | `#` | Highlights, CTAs, focus states |
+| Background | `#` | Page background |
+| Text Primary | `#` | Main body text |
+| Text Secondary | `#` | Muted/helper text |
+
+#### Status Colors
+| Color | Hex Code | Usage |
+|-------|----------|-------|
+| Success | `#` | Success messages, confirmations |
+| Error/Alert | `#` | Error states, required fields |
+| Warning | `#` | Warning messages |
+| Info | `#` | Informational messages |
+
+#### Promotion Colors
+| Color | Hex Code | Usage |
+|-------|----------|-------|
+| Sale/Promotion | `#` | Sale badges, discount highlights |
+| Campaign | `#` | Special campaign banners |
+| New Arrival | `#` | New product badges |
+
+### Typography
+| Element | Font Family | Weight | Size (if specific) |
+|---------|-------------|--------|-------------------|
+| Headings | | | |
+| Body Text | | | |
+| Buttons | | | |
+| Navigation | | | |
+
+> Note: Provide Google Fonts name or attach custom font files (.woff2)
+
+---
+
+## 2. Shop Configuration
+
+### Shops/Locales
+> Add a row for each shop/locale you need
+
+| Shop ID | Locale Code | Currency | Country | URL Prefix | Is Default |
+|---------|-------------|----------|---------|------------|------------|
+| | en-US | USD | US | /us | Yes |
+| | de-DE | EUR | DE | /de | No |
+| | fr-FR | EUR | FR | /fr | No |
+
+### Payment Providers
+> List payment providers to enable per shop
+
+| Shop/Locale | Payment Providers |
+|-------------|-------------------|
+| en-US | Stripe, PayPal, Apple Pay |
+| de-DE | Klarna, PayPal |
+
+---
+
+## 3. Content Management
+
+### CMS Provider
+- [ ] **Storyblok** - Visual editor, component-based
+- [ ] **Contentful** - Flexible content modeling
+- [ ] **Contentstack** - API-first approach
+- [ ] **None** - Hardcoded content only
+
+### CMS Credentials (if applicable)
+| Setting | Value |
+|---------|-------|
+| Space ID / Environment | |
+| Access Token (public) | |
+| Preview Token | |
+| Management Token | |
+
+### Homepage Content
+
+#### Hero Section
+| Field | Value |
+|-------|-------|
+| Headline | |
+| Subheadline | |
+| CTA Button Text | |
+| CTA Button Link | |
+| Background Image URL | |
+
+#### Featured Sections
+> Describe sections to appear on homepage
+
+1. **Section Name**:
+   - Type: [Product Slider | Category Grid | Banner | Text Block]
+   - Content:
+
+2. **Section Name**:
+   - Type:
+   - Content:
+
+### Header Top Bar
+| Field | Value |
+|-------|-------|
+| Message Text | e.g., "Free shipping on orders over $50" |
+| Link (optional) | |
+| Background Color | |
+| Text Color | |
+
+### Footer Content
+
+#### Link Sections
+| Section Title | Links (label: URL) |
+|---------------|-------------------|
+| Customer Service | |
+| About Us | |
+| Legal | |
+
+#### Social Media Links
+| Platform | URL |
+|----------|-----|
+| Instagram | |
+| Facebook | |
+| Twitter/X | |
+| TikTok | |
+| YouTube | |
+
+#### Legal/Compliance
+| Item | URL or Text |
+|------|-------------|
+| Privacy Policy | |
+| Terms & Conditions | |
+| Imprint | |
+| Cookie Policy | |
+
+---
+
+## 4. Product Display
+
+### Grid Layout
+| Viewport | Products Per Row |
+|----------|------------------|
+| Mobile (<640px) | 2 |
+| Tablet (640-1023px) | 3 |
+| Desktop (1024px+) | 4 |
+
+### Pagination
+| Setting | Value |
+|---------|-------|
+| Products Per Page | 24 |
+| Show "Load More" Button | Yes/No |
+| Infinite Scroll | Yes/No |
+
+### Product Images
+| Setting | Value |
+|---------|-------|
+| Aspect Ratio | 3:4 (portrait) / 1:1 (square) / 4:3 (landscape) |
+| Image Quality | 75 (1-100) |
+| Eager Load Count | 8 (images loaded immediately) |
+
+### Color Swatches
+> Map color attribute names to hex codes
+
+| Color Name | Hex Code(s) |
+|------------|-------------|
+| Black | #000000 |
+| White | #FFFFFF |
+| Navy | #1a237e |
+| Red | #d32f2f |
+| | |
+
+### Product Badges
+| Badge Type | Label | Background Color | Text Color |
+|------------|-------|------------------|------------|
+| Sale | "SALE" | | |
+| New | "NEW" | | |
+| Limited | "LIMITED" | | |
+| Exclusive | "EXCLUSIVE" | | |
+
+### Product Card Features
+- [ ] Show color/variant swatches
+- [ ] Show wishlist button
+- [ ] Show quick-add to cart
+- [ ] Show ratings/reviews
+- [ ] Show "In Stock" status
+
+---
+
+## 5. Features
+
+### Core Features
+- [x] Product Catalog
+- [x] Shopping Cart
+- [x] Checkout
+- [ ] Wishlist
+- [ ] Product Reviews
+- [ ] Recently Viewed
+- [ ] Product Comparison
+
+### Promotions
+- [ ] Sale/Discount Badges
+- [ ] Buy X Get Y Deals
+- [ ] Combo Deals
+- [ ] Gift Selection
+- [ ] Promotion Banners
+- [ ] Countdown Timers
+
+### Search & Navigation
+- [ ] Autocomplete Search
+- [ ] Search Suggestions
+- [ ] Recent Searches
+- [ ] Mega Menu Navigation
+- [ ] Breadcrumb Trail
+
+### Account Features
+- [ ] Guest Checkout
+- [ ] User Registration
+- [ ] Order History
+- [ ] Address Book
+- [ ] Saved Payment Methods
+- [ ] Newsletter Subscription
+
+### Subscriptions (if applicable)
+- [ ] Enable Subscription Module
+- [ ] Subscription Products
+- [ ] Recurring Orders
+
+---
+
+## 6. Authentication
+
+### Auth Providers
+- [ ] Email/Password
+- [ ] Google OAuth
+- [ ] Facebook OAuth
+- [ ] Apple Sign-In
+- [ ] Other: ___________
+
+### OAuth Credentials (if applicable)
+| Provider | Client ID | Redirect URI |
+|----------|-----------|--------------|
+| Google | | |
+| Facebook | | |
+| Apple | | |
+
+---
+
+## 7. Analytics & Tracking
+
+### Google Tag Manager
+| Setting | Value |
+|---------|-------|
+| GTM Container ID | GTM-XXXXXXX |
+| Enable Enhanced Ecommerce | Yes/No |
+
+### Consent Management
+| Setting | Value |
+|---------|-------|
+| Provider | Usercentrics / Cookiebot / OneTrust / None |
+| Settings ID | |
+
+### Custom Events to Track
+> List any additional events beyond standard ecommerce
+
+| Event Name | Trigger |
+|------------|---------|
+| | |
+
+---
+
+## 8. Environment Configuration
+
+### API & Services
+| Service | Value |
+|---------|-------|
+| SCAYLE Storefront API Host | |
+| CDN URL (images) | |
+| Google Maps API Key | |
+
+### OAuth (Backend)
+| Setting | Value |
+|---------|-------|
+| OAuth Host | |
+| OAuth Client ID | |
+| OAuth Client Secret | |
+| OAuth Audience | |
+
+### Monitoring (Optional)
+| Service | Value |
+|---------|-------|
+| Sentry DSN | |
+| OpenTelemetry Enabled | Yes/No |
+| Log Level | debug / info / warn / error |
+
+---
+
+## 9. SEO & Metadata
+
+### Default Meta Tags
+| Tag | Value |
+|-----|-------|
+| Site Title | |
+| Title Template | e.g., "%s | Brand Name" |
+| Meta Description | |
+| OG Image (default) | |
+
+### Robots
+| Setting | Value |
+|---------|-------|
+| Allow Indexing | Yes/No |
+| Sitemap URL | |
+
+---
+
+## 10. Additional Customizations
+
+### Custom Fonts
+> Attach font files or list Google Fonts to include
+
+| Font Name | Weights | Source |
+|-----------|---------|--------|
+| | | Google Fonts / Custom |
+
+### Custom Icons
+> List any custom icons needed beyond the default set
+
+| Icon Name | Usage | File |
+|-----------|-------|------|
+| | | |
+
+### Custom Pages
+> List any additional static pages needed
+
+| Page | URL Path | Description |
+|------|----------|-------------|
+| About Us | /about | |
+| Contact | /contact | |
+| FAQ | /faq | |
+| | | |
+
+### Third-Party Integrations
+| Integration | Purpose | Credentials/Config Needed |
+|-------------|---------|---------------------------|
+| | | |
+
+---
+
+## Notes & Additional Requirements
+
+> Add any other requirements, constraints, or context here
+
+```
+[Your notes here]
+```
+
+---
+
+## Checklist Before Development
+
+- [ ] All logo assets provided (SVG format)
+- [ ] Color palette finalized
+- [ ] Shop IDs confirmed from SCAYLE backend
+- [ ] CMS provider selected and credentials available
+- [ ] API endpoints and credentials confirmed
+- [ ] Analytics IDs ready
+- [ ] Content for homepage/footer prepared
+- [ ] Translation files ready (if multi-language)

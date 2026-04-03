@@ -2,12 +2,19 @@
   <SFLocalizedLink
     :to="routeList.wishlist"
     raw
-    class="flex h-11 items-center justify-center rounded-md p-2 hover:bg-gray-200"
+    class="flex h-full items-center justify-center hover:bg-white/10"
     data-testid="wishlist-link"
     :aria-label="ariaLabel"
   >
     <IconCommerceWishlist class="size-5 shrink-0" />
     <span
+      v-if="showLabel"
+      class="ml-1.5 hidden text-sm lg:inline"
+    >
+      {{ $t('navigation.wishlist_label') || 'Wish List' }}
+    </span>
+    <span
+      v-else
       class="ml-1 min-w-[1ch] text-sm font-semibold leading-none"
       data-testid="header-wishlist-count"
     >
@@ -26,6 +33,8 @@ import { useWishlist } from '#storefront/composables'
 import SFLocalizedLink from '~/components/SFLocalizedLink.vue'
 import { routeList } from '~/utils'
 import { IconCommerceWishlist } from '#components'
+
+defineProps<{ showLabel?: boolean }>()
 
 const mounted = useMounted()
 const { count } = useWishlist()

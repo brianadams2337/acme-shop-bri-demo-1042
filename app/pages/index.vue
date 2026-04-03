@@ -1,9 +1,5 @@
 <template>
-  <PageComponent slug="homepage" data-testid="home-page-content">
-    <template #loading>
-      <SFContentPageSkeletonLoader />
-    </template>
-  </PageComponent>
+  <SFGiltHomepage data-testid="home-page-content" />
 </template>
 
 <script setup lang="ts">
@@ -19,9 +15,8 @@ import {
 } from '#imports'
 import { useNuxtApp, useRequestURL, useRuntimeConfig } from '#app'
 import { useRoute } from '#app/composables/router'
-import PageComponent from '#storefront-cms/components/PageComponent.vue'
 import { useJsonld } from '~/composables/useJsonld'
-import SFContentPageSkeletonLoader from '~/components/SFContentPageSkeletonLoader.vue'
+import SFGiltHomepage from '~/components/home/SFGiltHomepage.vue'
 import { type Locale, useI18n } from '#i18n'
 import { useRouteHelpers } from '~/composables'
 
