@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+/* SCAYLE Checkout Web Component Theme Overrides */
+/* Note: These CSS custom properties override the default purple theme with gold (#C9A227) */
+#scayle-checkout-container,
+scayle-checkout,
+scayle-express-checkout,
+scayle-auth,
+scayle-auth-new-password {
+  --color-primary: #C9A227;
+  --color-primary-hover: #b8922e;
+  --color-primary-active: #a7841f;
+  --color-accent: #C9A227;
+  --color-accent-hover: #b8922e;
+  --color-link: #C9A227;
+  --color-link-hover: #b8922e;
+  --button-primary-background: #C9A227;
+  --button-primary-background-hover: #b8922e;
+  --button-primary-background-active: #a7841f;
+  --button-primary-border-color: #C9A227;
+  --button-primary-border-color-hover: #b8922e;
+  --checkbox-checked-background: #C9A227;
+  --checkbox-checked-border-color: #C9A227;
+  --radio-checked-background: #C9A227;
+  --radio-checked-border-color: #C9A227;
+  --input-focus-border-color: #C9A227;
+  --progress-bar-fill: #C9A227;
+  --stepper-active-color: #C9A227;
+  --stepper-completed-color: #C9A227;
+  --tab-active-border-color: #C9A227;
+  --tab-active-text-color: #C9A227;
+}
+
 @layer base {
   /* Automatically add focus outline styles to all focusable elements */
   *:focus-visible {

@@ -1,11 +1,11 @@
 <template>
   <header
-    class="relative flex h-15 items-center justify-between border-b px-7 text-md font-semibold text-primary"
+    class="relative flex h-15 items-center justify-between bg-black px-7 text-md font-semibold text-white"
   >
     <SFLocalizedLink
       :to="routeList.home"
       raw
-      class="flex items-center gap-2 rounded-md p-1 text-md font-semibold text-primary hover:bg-gray-200"
+      class="flex items-center gap-2 rounded-md p-1 text-md font-semibold text-white hover:text-white/80"
     >
       <IconNavigationBack class="size-4" data-testid="back-to-shop-button" />
       <div class="mr-auto hidden pt-0.5 md:block">
@@ -19,10 +19,10 @@
     <SFLocalizedLink
       :to="routeList.home"
       raw
-      class="absolute left-1/2 -translate-x-1/2"
+      class="absolute left-1/2 -translate-x-1/2 text-white"
       :aria-label="shopName"
     >
-      <IconLogoSignet class="size-7" />
+      <IconLogoSignet class="h-9 w-auto" />
     </SFLocalizedLink>
 
     <nav class="hidden flex-row gap-4 md:flex">
@@ -30,7 +30,7 @@
         v-for="navItem in headerTree?.items"
         :key="`footer-link-${navItem.id}`"
         raw
-        class="rounded-md p-1 hover:bg-gray-200"
+        class="rounded-md p-1 text-white hover:text-white/80"
         :navigation-item="navItem"
       />
       <span class="ml-auto" />
