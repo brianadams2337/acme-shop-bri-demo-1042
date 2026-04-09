@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="relative">
     <!-- Main Header Bar (Black) -->
     <header
       class="flex h-13 items-center bg-header-bg lg:relative lg:h-16"
@@ -84,13 +84,13 @@
       </div>
     </header>
 
-    <!-- Navigation Bar (Gray) -->
+    <!-- Navigation Bar (Black) -->
     <nav
-      class="hidden h-10 bg-nav-bg lg:block"
+      class="hidden h-10 bg-black lg:block"
       data-testid="nav-categories"
     >
-      <div class="flex h-full items-center justify-end">
-        <ul class="flex h-full items-center gap-6">
+      <div class="flex h-full items-center justify-center">
+        <ul class="flex h-full items-center gap-8">
           <SFHeaderNavigationItem
             v-for="item in mainNavigationItems"
             :key="item.id"

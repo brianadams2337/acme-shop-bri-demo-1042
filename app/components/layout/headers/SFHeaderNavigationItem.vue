@@ -5,14 +5,20 @@
     @mouseenter="openFlyout(false)"
     @mouseleave="closeFlyout()"
   >
-    <div class="relative flex items-center">
+    <div class="relative flex h-full items-center">
       <SFNavigationTreeItem
         :navigation-item="item"
-        class="!mr-0 flex !h-6 items-center py-1 text-white hover:text-white/80"
+        class="!mr-0 flex !h-full items-center border-b-4 py-1 text-white hover:!bg-transparent"
+        :class="[
+          isActive
+            ? 'border-[#C9A227]'
+            : 'border-transparent hover:border-[#C9A227]',
+        ]"
         data-testid="nav-link-main"
         :is-active="isActive"
+        raw
       >
-        <span class="text-sm font-normal uppercase tracking-wide">
+        <span class="text-base font-normal uppercase tracking-wide">
           {{ item.name }}
         </span>
       </SFNavigationTreeItem>

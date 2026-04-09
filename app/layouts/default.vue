@@ -7,12 +7,13 @@
     <SFToastContainer />
     <CountryDetection @switch-shop="switchShop" />
     <div>
-      <SFDealRibbon
+      <!-- Promo ribbon hidden -->
+      <!-- <SFDealRibbon
         v-if="
           ribbonDisplayData && shouldShowPromotionRibbon && !isMobileSidebarOpen
         "
         :display-data="ribbonDisplayData"
-      />
+      /> -->
       <SFHeaderTopBar />
       <SFHeader v-model:is-mobile-sidebar-open="isMobileSidebarOpen" />
       <main

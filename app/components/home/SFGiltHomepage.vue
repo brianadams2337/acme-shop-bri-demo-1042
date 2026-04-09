@@ -1,5 +1,5 @@
 <template>
-  <div class="gilt-homepage">
+  <div class="gilt-homepage flex flex-col gap-1.5 p-1.5">
     <!-- Hero Section -->
     <section class="relative">
       <a href="/category/new" class="block">
@@ -14,7 +14,7 @@
     </section>
 
     <!-- Promo Tiles Grid - Row 1 -->
-    <section class="grid grid-cols-1 gap-0 md:grid-cols-2 lg:grid-cols-3">
+    <section class="grid grid-cols-1 gap-1.5 md:grid-cols-2 lg:grid-cols-3">
       <!-- Tile 1 -->
       <a href="/category/sale" class="group relative block overflow-hidden">
         <img
@@ -47,7 +47,7 @@
     </section>
 
     <!-- Promo Tiles Grid - Row 2 -->
-    <section class="grid grid-cols-1 gap-0 md:grid-cols-2 lg:grid-cols-3">
+    <section class="grid grid-cols-1 gap-1.5 md:grid-cols-2 lg:grid-cols-3">
       <!-- Tile 4 -->
       <a href="/category/shoes" class="group relative block overflow-hidden">
         <img
