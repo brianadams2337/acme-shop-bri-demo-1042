@@ -91,20 +91,7 @@
             class="max-md:mx-5"
           />
 
-          <SFFadeInTransition>
-            <SFStoreVariantAvailability
-              v-if="activeVariant?.id"
-              class="max-md:mx-5"
-              :selected-store-id="selectedStoreId"
-              :variant-id="activeVariant.id"
-            />
-          </SFFadeInTransition>
-          <SFLazyStoreLocatorSlideIn
-            v-if="activeVariant?.id"
-            v-model:selected-store-id="selectedStoreId"
-            :variant-id="activeVariant.id"
-          />
-        </div>
+                  </div>
       </div>
       <SFProductDetails :product="product" class="py-10 md:ml-24" />
       <hr v-if="recommendedProductIds.length" class="mb-10 md:hidden" />
@@ -133,7 +120,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, defineAsyncComponent, onUnmounted, watch } from 'vue'
+import { computed, onUnmounted, watch } from 'vue'
 import { whenever } from '@vueuse/core'
 import {
   getFirstAttributeValue,
@@ -169,7 +156,6 @@ import {
   hasCampaignReduction,
 } from '~/utils'
 import { useProductBaseInfo } from '~/composables/useProductBaseInfo'
-import { useFavoriteStore } from '~/composables/useFavoriteStore'
 import { useI18n, type Locale } from '#i18n'
 import { PRODUCT_DETAIL_WITH_PARAMS } from '#shared/constants'
 import SFAsyncStatusWrapper from '~/components/SFAsyncStatusWrapper.vue'
@@ -178,9 +164,8 @@ import SFProductBreadcrumbs from '~/components/product/SFProductBreadcrumbs.vue'
 import SFProductPrice from '~/components/product/SFProductPrice.vue'
 import SFDealBanner from '~/components/deal/SFDealBanner.vue'
 import SFProductActions from '~/components/product/detail/SFProductActions.vue'
-import SFStoreVariantAvailability from '~/components/locator/SFStoreVariantAvailability.vue'
 import SFProductDetails from '~/components/product/SFProductDetails.vue'
-import { SFHeadline, SFFadeInTransition } from '#storefront-ui/components'
+import { SFHeadline } from '#storefront-ui/components'
 import SFProductDetailPageLoadingState from '~/components/product/detail/SFProductDetailPageLoadingState.vue'
 import {
   getCombineWithProductIds,
@@ -214,9 +199,6 @@ import {
 } from '#tracking/composables'
 import SFSimilarProductsSlider from '~/components/product/SFSimilarProductsSlider.vue'
 
-const SFLazyStoreLocatorSlideIn = defineAsyncComponent(
-  () => import('~/components/locator/SFStoreLocatorSlideIn.vue'),
-)
 
 const CURRENT_PRODUCT_DATA_KEY = 'PDP-currentProduct'
 
@@ -397,11 +379,6 @@ const recommendedProductIds = computed(() => {
   )
 })
 
-// Store selector
-const favoriteStoreId = useFavoriteStore()
-const selectedStoreId = ref<number | undefined>(
-  favoriteStoreId.value ?? undefined,
-)
 
 const { getBreadcrumbsFromProductCategories } = useBreadcrumbs()
 const breadcrumbs = computed(() =>

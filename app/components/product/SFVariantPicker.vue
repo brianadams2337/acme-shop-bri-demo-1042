@@ -26,7 +26,7 @@
     </span>
     <template #item="{ item, selectItem }">
       <button
-        :disabled="item.stock.quantity === 0"
+        :disabled="item.stock.quantity === 0 && !item.stock.isSellableWithoutStock"
         class="group flex w-full items-center justify-between space-x-2 border-b border-gray-300 p-2 transition-all first-of-type:rounded-t-lg last-of-type:rounded-b-lg last-of-type:border-none hover:bg-gray-300"
         :data-testid="`variant-option-${item.id}`"
         :aria-label="
@@ -57,11 +57,11 @@
         </span>
         <div class="flex flex-row items-end gap-2">
           <SFReductionBadge
-            v-if="customBadgePromotion && item.stock.quantity > 0"
+            v-if="customBadgePromotion && (item.stock.quantity > 0 || item.stock.isSellableWithoutStock)"
             :promotion="customBadgePromotion"
           />
           <SFProductPrice
-            v-if="item.stock.quantity !== 0"
+            v-if="item.stock.quantity !== 0 || item.stock.isSellableWithoutStock"
             size="lg"
             :promotions="promotions"
             :price="item.price"
@@ -70,7 +70,7 @@
             :strike-through-price="strikeThroughPrice"
           />
         </div>
-        <span v-if="item.stock.quantity === 0">{{
+        <span v-if="item.stock.quantity === 0 && !item.stock.isSellableWithoutStock">{{
           $t('global.sold_out')
         }}</span>
       </button>

@@ -171,11 +171,15 @@ const isVariantPickerVisible = useElementVisibility(variantPicker, {
   threshold: 1,
 })
 
-const isSoldOutOrOutOfStock = computed(
-  () =>
-    (activeVariant.value && activeVariant.value?.stock.quantity <= 0) ||
-    product.isSoldOut,
-)
+const isSoldOutOrOutOfStock = computed(() => {
+  if (product.isSoldOut) {
+    return true
+  }
+  if (activeVariant.value && activeVariant.value?.stock.quantity <= 0) {
+    return !activeVariant.value?.stock.isSellableWithoutStock
+  }
+  return false
+})
 const {
   isInSellableTimeframe,
   sellableTimeframeStartsInFuture,
