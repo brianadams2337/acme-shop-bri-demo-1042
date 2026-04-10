@@ -91,19 +91,22 @@
             class="max-md:mx-5"
           />
 
-          <SFFadeInTransition>
-            <SFStoreVariantAvailability
+          <!-- Store availability module (hidden) -->
+          <div class="hidden">
+            <SFFadeInTransition>
+              <SFStoreVariantAvailability
+                v-if="activeVariant?.id"
+                class="max-md:mx-5"
+                :selected-store-id="selectedStoreId"
+                :variant-id="activeVariant.id"
+              />
+            </SFFadeInTransition>
+            <SFLazyStoreLocatorSlideIn
               v-if="activeVariant?.id"
-              class="max-md:mx-5"
-              :selected-store-id="selectedStoreId"
+              v-model:selected-store-id="selectedStoreId"
               :variant-id="activeVariant.id"
             />
-          </SFFadeInTransition>
-          <SFLazyStoreLocatorSlideIn
-            v-if="activeVariant?.id"
-            v-model:selected-store-id="selectedStoreId"
-            :variant-id="activeVariant.id"
-          />
+          </div>
         </div>
       </div>
       <SFProductDetails :product="product" class="py-10 md:ml-24" />
@@ -258,6 +261,24 @@ const productAsyncData = await useProduct(
 )
 
 const { data: product, error, status } = productAsyncData
+
+// Debug: Log storefront API response for product
+watch(
+  product,
+  (productData) => {
+    if (productData) {
+      console.log('=== Storefront API Product Response ===')
+      console.log('Product:', productData)
+      console.log('Variants:', productData.variants)
+      console.log('Attributes:', productData.attributes)
+      productData.variants?.forEach((variant, index) => {
+        console.log(`Variant ${index} attributes:`, variant.attributes)
+        console.log(`Variant ${index} stock:`, variant.stock)
+      })
+    }
+  },
+  { immediate: true },
+)
 
 whenever(
   error,
